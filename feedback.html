@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative Food Resources Feedback Form</title>
+    <style>
+        /* Custom CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #d5f425;
+            color: #f50404;
+            background: linear-gradient(135deg, #030303, #9a2051, #490656, #11087b, #008000,#d5f425);
+        }
+        h1 {
+            background: linear-gradient(135deg, #FF0000, #ef14ef, #d886fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background: linear-gradient(135deg, #4f383b, #4e2b39);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-size: 18px;
+            background: linear-gradient(135deg, #ffd700, #FF0000, #800080, #008000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #cccccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #ffd700;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #ffd700;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ffd700, #FF0000, #800080, #008000);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #FFD700, #FF0000, #800080, #008000);
+        }
+    </style>
+</head>
+<body>
+    <h1>Alternative Food Resources Feedback Form</h1>
+    <form action="submit_feedback.php" method="post">
+        <!-- Demographic Information -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender">
+
+        <label for="location">Location (City/Country):</label>
+        <input type="text" id="location" name="location">
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation">
+
+        <!-- Awareness and Knowledge -->
+        <label>How familiar are you with the concept of alternative food resources?</label>
+        <div class="rating-options">
+            <label class="switch">
+                <input type="checkbox" id="good" name="awareness" value="Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="good">Good</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="bad" name="awareness" value="Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="bad">Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="excellent" name="awareness" value="Excellent">
+                <span class="slider round"></span>
+            </label>
+            <label for="excellent">Excellent</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_bad" name="awareness" value="Very Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_bad">Very Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_good" name="awareness" value="Very Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_good">Very Good</label>
+        </div>
+
+        <!-- Experience with Alternative Food Products -->
+        <label>Have you ever tried any alternative food products?</label>
+        <div class="rating-options">
+            <label class="switch">
+                <input type="checkbox" id="good_exp" name="experience" value="Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="good_exp">Good</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="bad_exp" name="experience" value="Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="bad_exp">Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="excellent_exp" name="experience" value="Excellent">
+                <span class="slider round"></span>
+            </label>
+            <label for="excellent_exp">Excellent</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_bad_exp" name="experience" value="Very Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_bad_exp">Very Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_good_exp" name="experience" value="Very Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_good_exp">Very Good</label>
+        </div>
+
+        <!-- Real-Life Problem Questions -->
+        <label>What real-life problems do you think alternative food resources can help solve?</label>
+        <textarea id="problems" name="problems" rows="4" required></textarea>
+
+        <!-- Perceptions and Attitudes -->
+        <label>What is your overall perception of alternative food resources?</label>
+        <textarea id="perception" name="perception" rows="4" required></textarea>
+
+        <!-- Barriers to Adoption -->
+        <label>If you have not tried alternative food products, what factors prevent you from doing so?</label>
+        <textarea id="barriers" name="barriers" rows="4"></textarea>
+
+        <!-- Future Interest and Preferences -->
+        <label>Would you consider incorporating more alternative food products into your diet in the future?</label>
+        <div class="rating-options">
+            <label class="switch">
+                <input type="checkbox" id="good_future" name="future_interest" value="Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="good_future">Good</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="bad_future" name="future_interest" value="Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="bad_future">Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="excellent_future" name="future_interest" value="Excellent">
+                <span class="slider round"></span>
+            </label>
+            <label for="excellent_future">Excellent</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_bad_future" name="future_interest" value="Very Bad">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_bad_future">Very Bad</label>
+            
+            <label class="switch">
+                <input type="checkbox" id="very_good_future" name="future_interest" value="Very Good">
+                <span class="slider round"></span>
+            </label>
+            <label for="very_good_future">Very Good</label>
+        </div>
+
+        <!-- Suggestions and Feedback -->
+        <label>Do you have any suggestions for improving the accessibility, affordability, or appeal of alternative food resources?</label>
+        <textarea id="feedback" name="feedback" rows="4"></textarea>
+
+        <!-- Contact Information -->
+        <label for="email">Email (Optional):</label>
+        <input type="email" id="email" name="email">
+
+        <!-- Additional Questions -->
+        <label>Which alternative food products have you tried?</label>
+        <textarea id="tried_products" name="tried_products" rows="4"></textarea>
+
+        <label>How often do you consume alternative food products?</label>
+        <select id="consumption_frequency" name="consumption_frequency">
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Rarely">Rarely</option>
+            <option value="Never">Never</option>
+        </select>
+
+        <label>Do you have any dietary restrictions or preferences that influence your choice of alternative food products?</label>
+        <select id="dietary_restrictions" name="dietary_restrictions">
+            <option value="None">None</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Gluten-Free">Gluten-Free</option>
+            <option value="Dairy-Free">Dairy-Free</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>How do you usually learn about new alternative food products?</label>
+        <select id="discovery_channels" name="discovery_channels">
+            <option value="Social Media">Social Media</option>
+            <option value="Word of Mouth">Word of Mouth</option>
+            <option value="Online Reviews">Online Reviews</option>
+            <option value="Food Blogs/Websites">Food Blogs/Websites</option>
+            <option value="In-Store Sampling">In-Store Sampling</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button onclick="window.location.href = 'thankyou.html'">Submit Feedback</button>
+    </form>
+</body>
+</html>
